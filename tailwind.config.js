@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        xss: '0.5rem',
+      },
       colors: {
         'vinho' : '#811E07',
         'cinza' : '#F5F5F5',
@@ -13,6 +16,9 @@ export default {
       },
       spacing: {
         '800': '50rem',
+      },
+      backgroundImage: {
+        'waves': "url('/assets/new-waves.svg')"
       }
     },
   },
