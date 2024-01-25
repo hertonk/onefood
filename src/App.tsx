@@ -1,6 +1,5 @@
 import logo from './assets/logo.png';
 import cozidao from './assets/cozidao.png';
-import waves from  './assets/new-waves.svg';
 
 function App() {
 
