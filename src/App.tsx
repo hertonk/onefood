@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import AnchorDetect from "react-anchor-scroll-detect";
 
 import logo from './assets/logo.png';
