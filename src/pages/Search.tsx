@@ -50,21 +50,21 @@ export default function Search(){
         {
             'id': '01',
             'name': 'Cozidão',
-            'image': 'http://localhost:5173/cozidao.png',
+            'image': './cozidao.png',
             'description' : 'Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)',
             'price': 'R$ 13,00'
         },
         {
             'id': '02',
             'name': 'Frango Guisado',
-            'image': 'http://localhost:5173/frango.png',
+            'image': './frango.png',
             'description' : 'Pedaços de frango, cozidos com pouco caldo. Servidos com pouco molho e legumes além de arroz , macarrão, farofa, feijão e salada',
             'price': 'R$ 13,00'
         },
         {
             'id': '03',
             'name': 'Guisadinho de Carne',
-            'image': 'http://localhost:5173/carne.png',
+            'image': './carne.png',
             'description' : 'Carne em cubos, cozida em pouco caldo, acrescida de legumes. Conserva um molhinho delicioso. Acompanha arroz, macarrão, feijão, farofa, salada.',
             'price': 'R$ 13,00'
         },
