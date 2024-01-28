@@ -5,22 +5,59 @@ export default function Search(){
 
     const [ value, setValue ] = useState('');
     const [ searchResult, setSearchResult] = useState<Product[]>([]);
+    const [ searchResultCategory, setSearchResultCategory] = useState<Category[]>([]);
 
     type Product = {
         id: string,
         name: string,
         image: string,
         description: string,
-        price: string
+        price: string,
+        category: string
+    }
+
+    type Category = {
+        id: string,
+        name: string,
     }
 
     useEffect(() => {
         
         if(value === ''){
             setSearchResult([]);
+            setSearchResultCategory([]);
         } else {
 
             if(value.length > 4){
+
+                categories.find(function (element){
+                    const category = element.name.toLowerCase();
+                    if(category.includes(value.toLowerCase()))
+                     {
+
+                        let insert = true;
+                        
+                         searchResultCategory.find(function (elementInto) {
+                             if(element.id.includes(elementInto.id)){
+                                insert = false;
+                             }
+                            
+                         })
+
+                         if(insert == true){
+                            setSearchResultCategory(items => [...items, element]);
+
+                            produtos.find(function (element2) {
+                                const category = element2.category.toLowerCase();
+                                if(category.includes(element.name.toLowerCase()))
+                                 {   
+                                    setSearchResult(items => [...items, element2]);
+                                 }                     
+                             });
+                        }
+                     }
+                })
+
                 produtos.find(function (element) {
                     const name = element.name.toLowerCase();
                     const description = element.description.toLowerCase();
@@ -39,6 +76,8 @@ export default function Search(){
                              setSearchResult(items => [...items, element]);
                          }
                      }
+
+                     
                  });
             }
 
@@ -46,27 +85,49 @@ export default function Search(){
 
     }, [value]);
 
+    const categories : Array<Category> = [
+        {
+            'id': '01',
+            'name': 'Pratos Prontos',
+        },
+        {
+            'id': '02',
+            'name': 'Feitos na Hora',
+        },
+        {
+            'id': '03',
+            'name': 'Bebidas (Sucos e Refrigerantes)',
+        },
+        {
+            'id': '04',
+            'name': 'Sobremesas',
+        }
+    ];
+
     const produtos : Array<Product> =  [
         {
             'id': '01',
             'name': 'Cozidão',
             'image': './cozidao.png',
             'description' : 'Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)',
-            'price': 'R$ 13,00'
+            'price': 'R$ 13,00',
+            'category': 'Pratos Prontos'
         },
         {
             'id': '02',
             'name': 'Frango Guisado',
             'image': './frango.png',
             'description' : 'Pedaços de frango, cozidos com pouco caldo. Servidos com pouco molho e legumes além de arroz , macarrão, farofa, feijão e salada',
-            'price': 'R$ 13,00'
+            'price': 'R$ 13,00',
+            'category': 'Pratos Prontos'
         },
         {
             'id': '03',
             'name': 'Guisadinho de Carne',
             'image': './carne.png',
             'description' : 'Carne em cubos, cozida em pouco caldo, acrescida de legumes. Conserva um molhinho delicioso. Acompanha arroz, macarrão, feijão, farofa, salada.',
-            'price': 'R$ 13,00'
+            'price': 'R$ 13,00',
+            'category': 'Pratos Prontos'
         },
       ];
 
@@ -91,6 +152,7 @@ export default function Search(){
                         <button onClick={() => {
                                 setValue('')
                                 setSearchResult([])
+                                setSearchResultCategory([])
                             }
                             }>
                             <svg className="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -99,8 +161,38 @@ export default function Search(){
                         </button>
                     </div>
                 </div>
-                { searchResult.length > 0 && (
+
+                { searchResultCategory.length > 0 && (
                     <div className="bg-white w-full md:max-w-800 mx-auto p-2 flex flex-col">
+                        <p className='text-center text-gray-400 text-xs my-2'>Encontramos {searchResult.length} produto(s) e {searchResultCategory.length} categoria(s).</p>
+                       { searchResultCategory.map(item =>
+                            <span className='text-xl font-bold ml-4 px-4 py-4 border-2 border-r-gray-500 border-l-gray-500 border-y-slate-50 bg-slate-50'>{item.name}</span>
+                        )}
+                        { searchResult.map(item =>
+                                <Link to='/detail'>
+                                    <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                                    <p className='text-black text-xs font-bold mb-3'>{item.name}</p>
+                                    <div className="flex flex-row">
+                                        <div className='flex items-center justify-center mr-4'>
+                                        <img src={item.image} className='rounded-lg aspect-square' width='94' alt='' />
+                                        </div>
+                                        <div className="flex-1">
+                                        <p className='text-gray-400 text-xs'>{item.description}</p>
+                                        <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>{item.price}</span></p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </Link>
+                            )
+                        }
+                    </div>
+                    )
+                }
+
+                { searchResult.length > 0 && searchResultCategory.length == 0 && (
+                    <div className="bg-white w-full md:max-w-800 mx-auto p-2 flex flex-col">
+                        <p className='text-center text-gray-400 text-xs my-2'>Encontramos {searchResult.length} produto(s) e {searchResultCategory.length} categoria(s).</p>
+                        
                         { searchResult.map(item =>
                                 <Link to='/detail'>
                                     <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
