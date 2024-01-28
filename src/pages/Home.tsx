@@ -53,10 +53,10 @@ export default function Home() {
                   activeClass="bg-vinho text-white order-first"
                   offsetTop={83}
                 >
-                  <div className="menu-item section-1 text-vinho border border-vinho rounded-md px-3 py-2 text-sm mx-1 text-nowrap cursor-pointer">Pratos Prontos</div>
-                  <div className="menu-item section-2 text-vinho border border-vinho rounded-md px-3 py-2 text-sm mx-1 text-nowrap cursor-pointer">Feitos na Hora</div>
-                  <div className="menu-item section-3 text-vinho border border-vinho rounded-md px-3 py-2 text-sm mx-1 text-nowrap cursor-pointer">Bebidas (Sucos e Refrigerantes)</div>
-                  <div className="menu-item section-4 text-vinho border border-vinho rounded-md px-3 py-2 text-sm mx-1 text-nowrap cursor-pointer">Sobremesas</div>
+                  <div className="menu-item section-1 text-vinho border border-vinho rounded-md px-3 py-2 my-1 text-sm mx-1 text-nowrap cursor-pointer">Pratos Prontos</div>
+                  <div className="menu-item section-2 text-vinho border border-vinho rounded-md px-3 py-2 my-1 text-sm mx-1 text-nowrap cursor-pointer">Feitos na Hora</div>
+                  <div className="menu-item section-3 text-vinho border border-vinho rounded-md px-3 py-2 my-1 text-sm mx-1 text-nowrap cursor-pointer">Bebidas (Sucos e Refrigerantes)</div>
+                  <div className="menu-item section-4 text-vinho border border-vinho rounded-md px-3 py-2 my-1 text-sm mx-1 text-nowrap cursor-pointer">Sobremesas</div>
                 </AnchorDetect>
             </div>
           </div>
