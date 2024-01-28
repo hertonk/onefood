@@ -36,16 +36,14 @@ export default function Home() {
           </div>
           <div className='bg-cinza sticky top-0 py-4'> 
           <div className='flex flex-row w-full md:max-w-800 mx-auto items-center justify-center px-7 md:p-0'>
-            <div className='bg-white rounded-lg p-3 shadow-md'>
-              <a href="#">
-                <svg className="w-4 h-4 text-vinho" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
-                </svg>
-              </a>
-            </div>
+            <Link to="/search" className='bg-white rounded-lg p-3 shadow-md'>
+              <svg className="w-4 h-4 text-vinho" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+              </svg>
+            </Link>
             <div className='w-full'>
                 <AnchorDetect
-                  className="text-black flex flex-row overflow-x-auto container-snap ml-2"
+                  className="text-black flex flex-row overflow-x-scroll container-snap ml-2"
                   items={[
                     "section-1",
                     "section-2",
@@ -67,8 +65,23 @@ export default function Home() {
     
               <h1 className='text-xl font-bold mt-3 mb-2 ml-2'>Pratos Prontos</h1>
 
-              <Link to='/detail' className='bg-white border-b-2 border-gray-200 hover:bg-stone-100'>
-                <div className='flex flex-col p-4'>
+              <Link to='/detail'>
+                <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                  <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                  <div className="flex flex-row">
+                    <div className='flex items-center justify-center mr-4'>
+                      <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                    </div>
+                    <div className="flex-1">
+                      <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                      <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              
+              <Link to='/detail'>
+                <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
                   <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
                   <div className="flex flex-row">
                     <div className='flex items-center justify-center mr-4'>
@@ -82,8 +95,8 @@ export default function Home() {
                 </div>
               </Link>
 
-              <div className='bg-white border-b-2 border-gray-200'>
-                <div className='flex flex-col p-4'>
+              <Link to='/detail'>
+                <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
                   <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
                   <div className="flex flex-row">
                     <div className='flex items-center justify-center mr-4'>
@@ -95,11 +108,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
-
-              <div className='bg-white border-b-2 border-gray-200'>
-                <div className='flex flex-col p-4'>
+              <Link to='/detail'>
+                <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
                   <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
                   <div className="flex flex-row">
                     <div className='flex items-center justify-center mr-4'>
@@ -111,11 +123,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
-
-              <div className='bg-white border-b-2 border-gray-200'>
-                <div className='flex flex-col p-4'>
+              <Link to='/detail'>
+                <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
                   <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
                   <div className="flex flex-row">
                     <div className='flex items-center justify-center mr-4'>
@@ -127,11 +138,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
-
-              <div className='bg-white border-b-2 border-gray-200'>
-                <div className='flex flex-col p-4'>
+              <Link to='/detail'>
+                <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
                   <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
                   <div className="flex flex-row">
                     <div className='flex items-center justify-center mr-4'>
@@ -143,11 +153,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
-
-              <div className='bg-white border-b-2 border-gray-200'>
-                <div className='flex flex-col p-4'>
+              <Link to='/detail'>
+                <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
                   <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
                   <div className="flex flex-row">
                     <div className='flex items-center justify-center mr-4'>
@@ -159,281 +168,226 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
-
-
-              <div className='bg-white border-b-2 border-gray-200'>
-                <div className='flex flex-col p-4'>
-                  <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
-                  <div className="flex flex-row">
-                    <div className='flex items-center justify-center mr-4'>
-                      <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
-                    </div>
-                    <div className="flex-1">
-                      <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                      <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+              </Link>
               
           </div>
           <div id='section-2' className='w-full md:max-w-800 mx-auto'>
 
             <h1 className='text-xl font-bold mt-3 mb-2 ml-2'>Feitos na Hora</h1>
 
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
+                </div>
+              </div>
+            </Link>
         </div>
         <div id='section-3' className='w-full md:max-w-800 mx-auto'>
 
             <h1 className='text-xl font-bold mt-3 mb-2 ml-2'>Bebidas (Sucos e Refrigerantes)</h1>
-
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
-            <div className='bg-white border-b-2 border-gray-200'>
-              <div className='flex p-4 justify-between'>
-                <div>
-                  <p className='text-black text-xs font-bold'>Cozidão</p>
-                  <p className='text-gray-400 text-xs mt-2'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
-                  <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
-                </div>
-                <div className='flex items-center justify-center'>
-                  <img src={cozidao} className='rounded-lg aspect-square' width='84' alt='' />
-                </div>
-              </div>
-            </div>
             
-            
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link to='/detail'>
+              <div className='flex flex-col p-4 bg-white border-b-2 border-gray-200 hover:bg-stone-100 group'>
+                <p className='text-black text-xs font-bold mb-3'>Cozidão</p>
+                <div className="flex flex-row">
+                  <div className='flex items-center justify-center mr-4'>
+                    <img src={cozidao} className='rounded-lg aspect-square' width='94' alt='' />
+                  </div>
+                  <div className="flex-1">
+                    <p className='text-gray-400 text-xs'>Carne saborosa cozida com legumes, temperos frescos, servido com caldo. (Feijão acompanha se solicitado)</p>
+                    <p className='mt-2 text-xs'>A partir de <span className='font-bold text-sm'>R$ 13,00</span></p>
+                  </div>
+                </div>
+              </div>
+            </Link>
         </div>
 
         <div id='section-4' className='w-full md:max-w-800 mx-auto'>
